@@ -28,7 +28,7 @@ import (
 // }
 
 // send email
-func main() {
+func sendEmail() {
 	d := gomail.NewDialer("smtp.gmail.com", 587, "if-21039@students.ithb.ac.id", "ITHB2021")
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
