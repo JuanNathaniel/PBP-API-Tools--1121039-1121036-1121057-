@@ -8,13 +8,13 @@ import (
 
 // send email
 func main() {
-	d := gomail.NewDialer("joannanthaneil@gmail.com", 587, "Juan Nathaniel", "123456")
+	d := gomail.NewDialer("smtp.gmail.com", 587, "if-21039@students.ithb.ac.id", "ITHB2021")
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
 	// Send emails using d.
 	m := gomail.NewMessage()
-	m.SetHeader("From", "joannanthaniel@gmail.com")
-	m.SetHeader("To", "if-21039@students.ithb.ac.id")
+	m.SetHeader("From", "if-21039@students.ithb.ac.id")
+	m.SetHeader("To", "joannanthaniel@gmail.com")
 	m.SetHeader("Subject", "Test email su")
 	m.SetBody("text/plain", "Hello, this is a test email!")
 
