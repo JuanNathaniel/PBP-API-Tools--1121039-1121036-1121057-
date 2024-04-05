@@ -7,7 +7,7 @@ type User struct {
 	Email    string `json:"email"`
 }
 
-type News struct {
+type Berita struct {
 	ID    int    `json:"id"`
 	Date  string `json:"date"`
 	Title string `json:"title"`
