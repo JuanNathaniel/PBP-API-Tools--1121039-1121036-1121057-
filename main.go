@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"API_Exploration_3/controllers"
+	//"API_Exploration_3/controllers"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
@@ -14,9 +14,13 @@ import (
 func main() {
 	router := mux.NewRouter()
 
-	// controllers.RunScheduler()
-	controllers.Connect()
-	//controllers.sendEmail()
+	// Panggil sendEmail()
+	if err := controllers.sendEmail(); err != nil {
+		log.Fatal("Failed to send email:", err)
+	}
+
+	//controllers.RunScheduler()
+	//controllers.Connect()
 
 	http.Handle("/", router)
 	fmt.Println("Connected to port 8080")

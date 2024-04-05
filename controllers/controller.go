@@ -8,6 +8,7 @@ import (
 
 	// "github.com/go-co-op/gocron"
 	"crypto/tls"
+	"log"
 
 	"gopkg.in/gomail.v2"
 )
@@ -28,22 +29,25 @@ import (
 // }
 
 // send email
-func sendEmail() {
-	d := gomail.NewDialer("smtp.gmail.com", 587, "if-21039@students.ithb.ac.id", "ITHB2021")
+func sendEmail() error {
+	d := gomail.NewDialer("smtp.gmail.com", 587, "if-21039@students.ithb.ac.id", "zgns qqbk vyer oodi")
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
 	// Send emails using d.
 	m := gomail.NewMessage()
 	m.SetHeader("From", "if-21039@students.ithb.ac.id")
-	m.SetHeader("To", "joannanthaniel@gmail.com")
-	m.SetHeader("Subject", "Test email su")
+	m.SetHeader("To", "wermichael211@gmail.com")
+	m.SetHeader("Subject", "Test email ngehe")
 	m.SetBody("text/plain", "Hello, this is a test email!")
 
 	// Kirim email
 	if err := d.DialAndSend(m); err != nil {
-		panic(err)
+		log.Println("Error sending email:", err)
+		return err
 	}
 
+	log.Println("Email sent successfully!")
+	return nil
 }
 
 // func getTodayNews() {
