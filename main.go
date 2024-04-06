@@ -1,6 +1,9 @@
 package main
 
 import (
+	// "github.com/gorilla/mux"
+
+	// import (
 	"context"
 	"log"
 	"time"
@@ -21,13 +24,16 @@ import (
 func main() {
 	// router := mux.NewRouter()
 
+	controllers.RunScheduler()
 	// Panggil sendEmail()
-	// router.HandleFunc("/v2/insertuser2", controllers.sendEmail).Methods("GET")
+	// router.HandleFunc("getTodayNews/", controllers.RunScheduler()).Methods("GET")
 
-	RunScheduler()
+	// RunScheduler()
 	// sendEmail()
 	// getTodayNews()
 	//controllers.Connect()
+
+	// sendAdvertisement()
 
 	// http.Handle("/", router)
 	// fmt.Println("Connected to port 8080")
@@ -49,7 +55,6 @@ func RunScheduler() {
 	// 	//Mock Redis Example
 	// 	//go sendAdvertisement()
 	// })
-	sendAdvertisement()
 
 	// getTodayNews()
 

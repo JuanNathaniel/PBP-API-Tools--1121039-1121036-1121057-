@@ -16,6 +16,6 @@ func Connect() *sql.DB {
 }
 
 func ConnectRedis() *redis.Client {
-	rdb := redis.NewClient(&redis.Options{Addr: "localhost:80", Password: "", DB: 0})
+	rdb := redis.NewClient(&redis.Options{Addr: "localhost:6379", Password: "", DB: 0})
 	return rdb
 }

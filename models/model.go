@@ -13,3 +13,7 @@ type Berita struct {
 	Title string `json:"title"`
 	Text  string `json:"text"`
 }
+type Beritaa struct {
+	ID   int      `json:"id"`
+	Data []Berita `json:"data"`
+}
